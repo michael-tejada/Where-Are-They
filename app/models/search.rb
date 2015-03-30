@@ -1,7 +1,5 @@
 require 'open-uri'
 require 'json'
-# require 'net/http'
-# require 'uri'
 
 class Search
 
@@ -11,22 +9,16 @@ class Search
     false
   end
 
-  attr_accessor :movie_title, :url, :cast_data
-
-  # def open(url)
-  #   Net::HTTP.get(URI.parse(url))
-  # end
+  attr_accessor :movie_title, :cast_data
 
   def get_cast_data(movie_title)
     # clean up the user's input to feed to the URL
     @movie_title = sanitizeTitle(movie_title)
 
     # use movie_title to find the movie by title
-    @url = "api.themoviedb.org/3/search/movie?api_key=#{API_KEY}&query=#{@movie_title}"
-    binding.pry
-    @cast_data = JSON.load(open(@url))
-
-    # @cast_data = "hello"
+    url = "http://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_database_api_key']}&query=#{@movie_title}"
+    json = JSON.load(open(url))
+    
     # capture the movie's id
     # find the movie cast by movie id
     # return the cast data
@@ -36,3 +28,4 @@ class Search
     movie_title.strip.downcase.gsub(/ +/, '%20')
   end
 end
+
