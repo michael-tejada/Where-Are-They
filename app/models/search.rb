@@ -21,13 +21,10 @@ class Search
     json = JSON.load(open(url))
 
     #isolate just the first result in the JSON returned by TMDB
-    @movie_data = json['results'].first
+    movie_data = json['results'].first
 
     # capture the movie's id, title, and poster path
-    movie_id = movie_data['id']
-    movie_title = movie_data['title']
-    movie_poster_path = movie_data['poster_path']
-    movie_poster_url = "http://image.tmdb.org/t/p/w500#{movie_poster_path}"
+    
     # binding.pry
     # find the movie cast by movie id
     # return the cast data
