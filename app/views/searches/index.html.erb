@@ -1,6 +1,7 @@
 <%= form_for(@search, remote: true) do |f| %>
-  <%= f.text_field :movie_title, id: 'movie_title' %>
+  <%= f.text_field :movie_search, id: 'movie_search' %>
   <%= f.submit "Search", class: 'search-btn' %>
 <% end %>
 
+<section id="movie_poster"></section>
 <section id="cast"></section>

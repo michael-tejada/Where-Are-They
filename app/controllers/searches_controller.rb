@@ -5,7 +5,8 @@ class SearchesController < ApplicationController
 	end
 
   def create
-    @cast_data = Search.new.get_cast_data(params[:search][:movie_title])
+    @movie_data = Search.new.get_cast_data(params[:search][:movie_search])
+    # @movie_poster = "<img src='#{@cast_data} %>'>"
     respond_to do |f|
       f.html
       f.js
