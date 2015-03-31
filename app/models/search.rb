@@ -11,7 +11,7 @@ class Search
 
   attr_accessor :movie_search, :cast_data
 
-  def get_cast_data(movie_search)
+  def get_movie_data(movie_search)
     # clean up the user's input to feed to the URL
 
     @movie_search = sanitizeTitle(movie_search)
@@ -22,12 +22,15 @@ class Search
 
     #isolate just the first result in the JSON returned by TMDB
     movie_data = json['results'].first
+  end
 
-    # capture the movie's id, title, and poster path
-    
-    # binding.pry
-    # find the movie cast by movie id
-    # return the cast data
+  def get_cast_data(movie_id)
+    #url for finding a movie by ID
+    url = "http://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_database_api_key']}"
+    json = JSON.load(open(url))
+
+    cast_data = json['cast']
+    # return cast data
   end
 
   def sanitizeTitle(movie_search)
