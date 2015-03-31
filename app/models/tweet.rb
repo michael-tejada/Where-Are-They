@@ -18,7 +18,7 @@ class Tweet
     end
 
     possible_actors = client.user_search(actor_name)
-    actor_screen_name = possible_actors.select {|a| a.verified? == true}.first
+    actor_screen_name = possible_actors.select {|a| a.verified? == true && a.name == actor_name}.first
     
     if actor_screen_name
       actor_timeline = client.user_timeline(actor_screen_name)

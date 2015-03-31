@@ -1,5 +1,7 @@
+<h1>Where Are They (Literally) Right Now?</h1>
+
 <%= form_for(@search, remote: true) do |f| %>
-  <%= f.text_field :movie_search, id: 'movie_search' %>
+  <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!' %>
   <%= f.submit "Search", class: 'search-btn' %>
 <% end %>
 
