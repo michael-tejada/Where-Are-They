@@ -1,3 +1,5 @@
 $('#movie_poster').html('<%= image_tag @movie_poster_url %>');
 $('#movie_title').html('<%= j @movie_title %>');
-$('#cast').html('<%= j @cast_data %>');
+<% @cast_data.each do |actor| %>
+  $('#cast').append('<%= j render partial: 'actor', locals: { actor: actor } %>')
+<% end %>

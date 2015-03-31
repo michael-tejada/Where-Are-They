@@ -11,7 +11,13 @@ class SearchesController < ApplicationController
     @movie_poster_path = movie_data['poster_path']
     @movie_poster_url = "http://image.tmdb.org/t/p/w342#{@movie_poster_path}"
 
-    cast_data = Search.new.get_cast_data(@movie_id)
+    @cast_data = Search.new.get_cast_data(@movie_id)
+
+    #for each character, we want to display
+    # character['character']
+    # character['name']
+    # character['profile_path']
+    # binding.pry
 
     respond_to do |f|
       f.html
