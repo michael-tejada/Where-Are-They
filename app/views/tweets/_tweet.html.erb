@@ -5,4 +5,6 @@
     config.access_token_secret = ENV['twitter_access_secret']
     end %>
 
-<%= @client.oembed(tweet).html.html_safe %>
+<% @twitter_feed.each do |tweet| %>
+  <%= @client.oembed(tweet).html.html_safe %>
+<% end %>

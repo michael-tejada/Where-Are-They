@@ -1,3 +1,1 @@
-<% @twitter_feed.each do |tweet| %>
-  $('#twitter').append('<%= j render partial: 'tweet', locals: { tweet: tweet } %>')
-<% end %>
+$('#twitter').html('<%= j render partial: 'tweet', locals: { twitter_feed: @twitter_feed } %>')
