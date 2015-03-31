@@ -1,1 +1,5 @@
-<p><%= actor['name'] %></p>
+<div data-actor-name="<%= actor['name'] %>" class="actor-card">
+  <img src="http://image.tmdb.org/t/p/w92<%= actor['profile_path'] %>">
+  <h1><%= actor['name'] %></h1>
+  <h3><%= actor['character'] %></h3>
+</div>
