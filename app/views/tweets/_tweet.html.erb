@@ -5,6 +5,10 @@
     config.access_token_secret = ENV['twitter_access_secret']
     end %>
 
-<% @twitter_feed.each do |tweet| %>
-  <%= @client.oembed(tweet).html.html_safe %>
+<% if @twitter_feed %>
+  <% @twitter_feed.each do |tweet| %>
+    <%= @client.oembed(tweet).html.html_safe %>
+  <% end %>
+<% else %>
+  <%= "No Twitter feed." %>
 <% end %>
