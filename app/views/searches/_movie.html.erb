@@ -4,6 +4,7 @@
       <% @movie_post_url = "http://image.tmdb.org/t/p/w185#{movie['poster_path']}" %>
       <div class="movie_poster"><%= image_tag @movie_post_url %></div>
       <div class="movie_title"><%= movie['title'] %></div>
+      <div class="movie_date"><%= movie['release_date'][0..3] %></div>
     </div>
   <% end %>
 <% end %>
