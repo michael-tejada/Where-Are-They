@@ -17,7 +17,7 @@ class Search
     url = "http://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_database_api_key']}&query=#{@movie_search}"
     json = JSON.load(open(url))
 
-    @movie_data = json['results'][0..4] # array of 5 movies
+    @movie_data = json['results'][0..4].sort_by{|k| k['title']}
   end
 
   def sanitizeTitle(movie_search)
