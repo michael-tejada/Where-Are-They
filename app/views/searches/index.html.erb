@@ -5,10 +5,17 @@
   <%= f.submit "Search", class: 'search-btn' %>
 <% end %>
 
-<div class="container">
+
+
+	<div id="messages">
+		<% if flash[:notice] %>
+			<% binding.pry %>
+			<%= flash[:notice] %>
+		<% end %>
+	</div>
   <section id="movie_poster"></section>
   <section id="movie_title"></section>
-</div>
+
 
 <section id="cast"></section>
 

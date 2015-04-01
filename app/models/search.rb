@@ -16,6 +16,10 @@ class Search
 
     @movie_search = sanitizeTitle(movie_search)
 
+    if @movie_search.empty?
+      return nil
+    end
+
     # use movie_search to find the movie by title
     url = "http://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_database_api_key']}&query=#{@movie_search}"
     json = JSON.load(open(url))

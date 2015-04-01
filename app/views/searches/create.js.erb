@@ -1,4 +1,4 @@
 $('#movie_poster').html('<%= image_tag @movie_poster_url %>');
 $('#movie_title').html('<%= j @movie_title %>');
-$('#cast').html('<%= j render partial: 'actor', locals: { cast_data: @cast_data } %>');
+$('#cast').html('<%= j render partial: "actor", locals: { cast_data: @cast_data } %>');
 $('#twitter').html('');
