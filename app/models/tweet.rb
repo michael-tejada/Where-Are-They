@@ -33,6 +33,5 @@ class Tweet
     json = JSON.load(open(actor_credits_url))
     filmography_data = json['cast'].collect {|m| [m['release_date'], m['title'], m['id']]}
     filmography = json['cast'].collect {|m| "#{m['release_date']}: #{m['original_title']}"}.sort
-    binding.pry
   end
 end

@@ -9,9 +9,14 @@ body {
   margin: 0;
 }
 
-.actor-card {
+#movie {
+  margin: 0;
+}
+
+.actor-card, .movie_card {
   height: 250px;
   width: 200px;
   margin: 20px;
   display: inline-block;
 }
+
