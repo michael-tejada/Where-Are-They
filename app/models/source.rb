@@ -39,9 +39,9 @@ class Source
 
   def get_giphy(actor_name)
     url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name}&api_key=dc6zaTOxFJmzC"
-    # binding.pry
     json = JSON.load(open(url))
     giphy_array = json['data'].collect {|g| g['embed_url']}
+    giphy_array[0..14]
   end
 
 end
