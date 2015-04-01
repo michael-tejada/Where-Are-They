@@ -13,10 +13,16 @@ body {
   margin: 0;
 }
 
-.actor-card, .movie_card {
+.actor-card {
   height: 250px;
   width: 200px;
   margin: 20px;
   display: inline-block;
 }
 
+.movie-card {
+
+  width: 15%;
+  margin: 20px;
+  display: inline-block;
+}
