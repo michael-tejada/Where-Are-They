@@ -5,7 +5,7 @@
     config.access_token_secret = ENV['twitter_access_secret']
     end %>
 
-<% if @twitter_feed.empty? && @giphy.empty? && @filmography.empty? %>
+<% if !@twitter_feed.empty? && !@giphy.empty? && !@filmography.empty? %>
   <% @twitter_feed.each do |tweet| %>
     <%= @client.oembed(tweet).html.html_safe %>
   <% end %>
