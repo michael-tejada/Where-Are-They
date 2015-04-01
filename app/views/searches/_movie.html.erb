@@ -1,4 +1,4 @@
-<% if @movie_data == nil%>
+<% if !@movie_data.empty?%>
   <% @movie_data.each do |movie| %>
     <%= link_to movies_path(movie_id: movie['id']), method: 'post', remote: true do %>
       <div data-movie-title='<%= movie['title'] %>' class="movie-card">
