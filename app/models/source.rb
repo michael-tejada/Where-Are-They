@@ -19,9 +19,9 @@ class Source
     actor_screen_name = possible_actors.select {|a| a.verified? == true && a.name.strip.downcase == actor_name.downcase}.first
     
     if actor_screen_name
-      actor_timeline = client.user_timeline(actor_screen_name)
+      client.user_timeline(actor_screen_name).take(5)
     else
-      
+      client.search(actor_name, lang: "en").take(5)
     end
   end
 

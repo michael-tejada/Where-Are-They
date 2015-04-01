@@ -5,20 +5,23 @@
     config.access_token_secret = ENV['twitter_access_secret']
     end %>
 
-<% if @twitter_feed %>
+<% if @twitter_feed.empty? && @giphy.empty? && @filmography.empty? %>
   <% @twitter_feed.each do |tweet| %>
     <%= @client.oembed(tweet).html.html_safe %>
   <% end %>
-<% else %>
-<ul>
-  <% @filmography.each do |film| %>
-		<li><%= film %></li>
-  <% end %>
-</ul>
-<ul>
+  <ul>
+
   <% @giphy.each do |gif| %>
     <iframe src="<%= gif %>" width="480" height="258" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   <% end %>
-</ul>
-<% end %>
+  </ul>
 
+  <ul>
+    <% @filmography.each do |film| %>
+  		<li><%= film %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <h1>THIS PERSON IS A MYSTERY.</h1>
+<% end %>
