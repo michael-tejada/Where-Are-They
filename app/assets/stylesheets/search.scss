@@ -18,7 +18,6 @@ body {
 #movie {
   margin: 0;
   width: 100%;
-  background-color: lightgrey;
 }
 
 .actor-card {
@@ -34,6 +33,7 @@ body {
 .movie-card {
   height: 275px;
   width: 15%;
+  padding: 5px;
   margin: 20px;
   display: inline-block;
 }
