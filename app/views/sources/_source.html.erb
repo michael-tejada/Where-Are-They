@@ -14,5 +14,11 @@
   <% @filmography.each do |film| %>
 		<li><%= film %></li>
   <% end %>
-</ul>  	
+</ul>
+<ul>
+  <% @giphy.each do |gif| %>
+    <iframe src="<%= gif %>" width="480" height="258" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  <% end %>
+</ul>
 <% end %>
+

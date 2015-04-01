@@ -1,5 +1,5 @@
 <% @cast_data.each do |actor| %>
-  <%= link_to tweets_path(actor_name: actor['name']), method: 'post', remote: true do %>
+  <%= link_to sources_path(actor_name: actor['name']), method: 'post', remote: true do %>
     <div data-actor-name='<%= actor['name'] %>' class="actor-card">
     <% if actor['profile_path'] %>
       <img src='http://image.tmdb.org/t/p/w92<%= actor['profile_path'] %>'>
