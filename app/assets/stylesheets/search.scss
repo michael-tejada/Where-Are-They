@@ -1,8 +1,14 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 body {
   text-align: center;
+}
+
+.container {
+  width: 100%;
 }
 
 #cast {
@@ -11,13 +17,18 @@ body {
 
 #movie {
   margin: 0;
+  width: 100%;
+  background-color: lightgrey;
 }
 
 .actor-card {
-  height: 250px;
-  width: 200px;
+  width: 10%;
   margin: 20px;
   display: inline-block;
+}
+
+.actor-card h1 {
+  font-size: 22px;
 }
 
 .movie-card {
@@ -25,4 +36,8 @@ body {
   width: 15%;
   margin: 20px;
   display: inline-block;
+}
+
+li {
+  list-style-type: none;
 }
