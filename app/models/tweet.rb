@@ -6,8 +6,6 @@ class Tweet
     false
   end
 
-  
-
   def get_twitter_feed(actor_name)
 
     client = Twitter::REST::Client.new do |config|
@@ -22,12 +20,8 @@ class Tweet
     
     if actor_screen_name
       actor_timeline = client.user_timeline(actor_screen_name)
+    else
+      
     end
   end
-
 end
-
-# ENV['twitter_consumer_key']
-# ENV['twitter_consumer_secret']
-# ENV['twitter_access_token']
-# ENV['twitter_access_secret']
