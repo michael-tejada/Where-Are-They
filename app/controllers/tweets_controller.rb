@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
 
   def create
     @twitter_feed = Tweet.new.get_twitter_feed(params[:actor_name])
-
+    @filmography = Tweet.new.get_actor_data(params[:actor_name])
     respond_to do |f|
       f.html
       f.js

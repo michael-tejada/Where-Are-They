@@ -24,4 +24,14 @@ class Tweet
       
     end
   end
+
+  def get_actor_data(actor_name)
+    url = "http://api.themoviedb.org/3/search/person?api_key=#{ENV['movie_database_api_key']}&query=#{actor_name}"
+    json = JSON.load(open(url))
+    actor_id = json['results'].first['id']
+    actor_credits_url = "http://api.themoviedb.org/3/person/#{actor_id}/combined_credits?api_key=#{ENV['movie_database_api_key']}"
+    json = JSON.load(open(actor_credits_url))
+    filmography = json['cast'].collect {|m| "#{m['release_date']}: #{m['original_title']}"}.sort
+    # binding.pry
+  end
 end
