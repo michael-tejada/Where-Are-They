@@ -31,8 +31,8 @@ class Tweet
     actor_id = json['results'].first['id']
     actor_credits_url = "http://api.themoviedb.org/3/person/#{actor_id}/combined_credits?api_key=#{ENV['movie_database_api_key']}"
     json = JSON.load(open(actor_credits_url))
-    filmography_data = json['cast'].collect {|m| [m['release_date'], m['title'], m['id']]}
-    filmography = json['cast'].collect {|m| "#{m['release_date']}: #{m['original_title']}"}.sort
-    binding.pry
+    filmography_data = json['cast'].collect {|m| [m['release_date'] ? m['release_date'][0..3] : "", m['title'], m['id']]}
+    filmography = filmography_data.collect {|m| "#{m[0]}: #{m[1]}"}.sort
+    # binding.pry
   end
 end

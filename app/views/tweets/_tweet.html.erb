@@ -10,5 +10,7 @@
     <%= @client.oembed(tweet).html.html_safe %>
   <% end %>
 <% else %>
-  <%= @filmography %>
+  <% @filmography.each do |film| %>
+    <%= film %>
+  <% end %>
 <% end %>
