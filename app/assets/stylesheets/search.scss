@@ -37,8 +37,61 @@
   margin: 20px;
   display: inline-block;
 }
+*/
+
+.container {
+  text-align: center;
+  margin: auto;
+}
+
+.input-group {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+  padding: 20px;
+}
 
 li {
   list-style-type: none;
 }
-*/
+
+.horizontal-scroll {
+  height: 400px;
+  white-space: nowrap;
+  /*overflow-y: hidden;*/
+  overflow-x: scroll;
+}
+
+.movie-card, .actor-card {
+  margin: 5px;
+  display: inline-block;
+}
+
+.actor-card {
+  border: 1px solid grey;
+  height: 300px;
+  width: 300px;
+  padding: 10px; 
+}
+
+.vertical-scroll {
+  width: 33%;
+  float: left;
+  overflow: auto;
+}
+
+#giphy {
+  width: 45%;
+}
+
+#filmography {
+  width: 22%;
+}
+
+#cast {
+  margin: 0;
+  width: 100%;
+}

@@ -1,23 +1,20 @@
-<div class="navbar text-uppercase" role="navigation" id="navbar">
-  <!-- <div class="container"> -->
-    <div class="navbar-header">
-      <h3>Where Are They (Literally) Right Now?</h3>
+<div class="container">
+  <h1>Where Are They (Literally) Right Now?</h1>
+
+
+  <%= form_for(@search, remote: true) do |f| %>
+    <div class='input-group'>  
+      <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!', class: "form-control" %>
+      <span class="input-group-btn">
+        <%= f.submit "Search", class: 'btn btn-primary' %>
+      </span>
     </div>
-  <!-- </div> -->
+  <% end %>
+  <br>
+
+  <div id='movie' class='horizontal-scroll'></div>
 </div>
 
+<div id="cast" class='horizontal-scroll'></div>
 
-
-<%= form_for(@search, remote: true) do |f| %>
-  <div class='input-group' style="width: 30%;">  
-    <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!', class: "form-control" %>
-    <span class="input-group-btn">
-      <%= f.submit "Search", class: 'btn btn-primary' %>
-    </span>
-  </div>
-<% end %>
-<br>
-
-<div id="movie"></div>
-<section id="cast"></section>
-<section id="sources"></section>
+<div id="sources" style="display: inline-block;"></div>

@@ -6,21 +6,25 @@
     end %>
 
 <% if !@twitter_feed.empty? && !@giphy.empty? && !@filmography.empty? %>
+  <div id="twitter" class="vertical-scroll">
   <% @twitter_feed.each do |tweet| %>
     <%= @client.oembed(tweet).html.html_safe %>
   <% end %>
-  <ul>
+  </div>
 
+  <div id="giphy" class="vertical-scroll">
   <% @giphy.each do |gif| %>
-    <iframe src="<%= gif %>" width="480" height="258" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <iframe src="<%= gif %>" width="400" height="200" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   <% end %>
-  </ul>
+  </div>
 
+  <div id="filmography" class="vertical-scroll">
   <ul>
     <% @filmography.each do |film| %>
       <li><%= film %></li>
     <% end %>
   </ul>
+  </div>
 
 <% else %>
   <h1>THIS PERSON IS A MYSTERY.</h1>
