@@ -78,20 +78,22 @@ li {
 }
 
 .vertical-scroll {
-  width: 33%;
+  width: 30%;
   float: left;
   overflow: auto;
   margin: auto;
 }
 
 #giphy {
-  width: 45%;
+  width: 40%;
   text-align: center;
+  padding: 0;
 }
 
 #filmography {
-  width: 22%;
+  width: 30%;
   font-size: 20px;
+  padding: 0 10px 0 0;
 }
 
 #cast {

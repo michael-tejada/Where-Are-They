@@ -9,7 +9,7 @@
         <% end %>
         <div class="movie_poster"><%= image_tag @movie_post_url%></div>
         <div class="movie_title" style="word-wrap: normal;"><h4><%= movie['title'] %></h4></div>
-        <div class="movie_date"><%= movie['release_date'][0..3] %></div>
+        <div class="movie_date"><h4><%= movie['release_date'][0..3] %></h4></div>
       </div>
     <% end %>
   <% end %>

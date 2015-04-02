@@ -19,11 +19,9 @@
   </div>
 
   <div id="filmography" class="vertical-scroll">
-  <ul>
     <% @filmography.each do |film| %>
-      <li><%= film %></li>
+      <%= film %><br>
     <% end %>
-  </ul>
   </div>
 
 <% else %>
