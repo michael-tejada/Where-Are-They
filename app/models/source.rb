@@ -26,7 +26,7 @@ class Source
   end
 
   def get_actor_data(actor_name)
-    url = "http://api.themoviedb.org/3/search/person?api_key=#{ENV['movie_database_api_key']}&query=#{actor_name}"
+    url = "http://api.themoviedb.org/3/search/person?api_key=#{ENV['movie_database_api_key']}&query=#{actor_name.gsub(' ', '%20')}"
     json = JSON.load(open(url))
     actor_id = json['results'].first['id']
     actor_credits_url = "http://api.themoviedb.org/3/person/#{actor_id}/combined_credits?api_key=#{ENV['movie_database_api_key']}"
@@ -38,7 +38,7 @@ class Source
   end
 
   def get_giphy(actor_name)
-    url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name}&api_key=dc6zaTOxFJmzC"
+    url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name.gsub(' ', '%20')}&api_key=dc6zaTOxFJmzC" # public API key
     json = JSON.load(open(url))
     giphy_array = json['data'].collect {|g| g['embed_url']}
     giphy_array[0..14]
