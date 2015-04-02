@@ -1,18 +1,39 @@
 <% if !@movie_data.empty?%>
-  <% @movie_data.each do |movie| %>
-    <%= link_to movies_path(movie_id: movie['id']), method: 'post', remote: true do %>
-      <div data-movie-title='<%= movie['title'] %>' class="movie-card">
-        <% if movie['poster_path'] %>
-          <% @movie_post_url = "http://image.tmdb.org/t/p/w185#{movie['poster_path']}" %>
-        <% else %>
-          <% @movie_post_url = "https://s1.yimg.com/os/mit/media/m/entity/images/movie_placeholder-e0ca244.png" %>
+  <div id='myCarousel' class="owl-carousel owl-theme carousel slide" style="display: block; opacity: 1;">
+    <div class="owl-wrapper-outer" data-ride='carousel'>
+      <div class="owl-wrapper" style="display: block; width: 2928px;">
+        <% @movie_data.each do |movie| %>
+          <div class="owl-item">
+            <div class="item">
+              <%= link_to movies_path(movie_id: movie['id']), method: 'post', remote: true do %>
+                <div data-movie-title='<%= movie['title'] %>' class="movie-card img-responsive">
+                  <% if movie['poster_path'] %>
+                    <% @movie_post_url = "http://image.tmdb.org/t/p/w185#{movie['poster_path']}" %>
+                  <% else %>
+                    <% @movie_post_url = "https://s1.yimg.com/os/mit/media/m/entity/images/movie_placeholder-e0ca244.png" %>
+                  <% end %>
+                  <div class="movie_poster"><%= image_tag @movie_post_url %></div>
+                  <div class="movie_title"><%= movie['title'] %></div>
+                  <div class="movie_date"><%= movie['release_date'][0..3] %></div>
+                </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-        <div class="movie_poster"><%= image_tag @movie_post_url %></div>
-        <div class="movie_title"><%= movie['title'] %></div>
-        <div class="movie_date"><%= movie['release_date'][0..3] %></div>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+
+    <div class="owl-controls clickable">
+      <div class="owl-pagination">
+        <div class="owl-page">
+          <span class></span>
+        </div>
+        <div class="owl-page">
+          <span class></span>
+        </div>
+      </div>
+    </div>
+  </div>
 <% else %>
   <h1>THAT'S NOT A MOVIE!</h1>
 <% end %>

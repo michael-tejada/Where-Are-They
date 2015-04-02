@@ -1,11 +1,23 @@
-<h1>Where Are They (Literally) Right Now?</h1>
+<div class="navbar text-uppercase" role="navigation" id="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <h3>Where Are They (Literally) Right Now?</h3>
+    </div>
+  </div>
+</div>
+
+
 
 <%= form_for(@search, remote: true) do |f| %>
-  <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!' %>
-  <%= f.submit "Search", class: 'search-btn' %>
+  <div class='input-group' style="width: 30%;">  
+    <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!', class: "form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit "Search", class: 'btn btn-primary' %>
+    </span>
+  </div>
 <% end %>
 <br>
 
-<section id="movie"></section>
+<div id="movie"></div>
 <section id="cast"></section>
 <section id="sources"></section>
