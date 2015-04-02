@@ -21,7 +21,7 @@ class Source
     if actor_screen_name
       client.user_timeline(actor_screen_name).take(5)
     else
-      client.search(actor_name, lang: "en").take(5)
+      client.search(actor_name, lang: "en").take(10).select {|t| t.text.include?(actor_name)}
     end
   end
 
