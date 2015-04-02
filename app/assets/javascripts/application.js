@@ -15,4 +15,4 @@
 //= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
-//= require owl.carousel.min
+//= require owl.carousel.min.js
