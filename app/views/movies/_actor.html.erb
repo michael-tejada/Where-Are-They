@@ -2,7 +2,7 @@
   <%= link_to sources_path(actor_name: actor['name']), method: 'post', remote: true do %>
     <div data-actor-name='<%= actor['name'] %>' class="actor-card">
     <% if actor['profile_path'] %>
-      <img src='http://image.tmdb.org/t/p/w92<%= actor['profile_path'] %>'>
+      <img src='http://image.tmdb.org/t/p/w92<%= actor['profile_path'] %>' style='width:160px'>
     <% else %> 
     	 <img src='http://www.unixstickers.com/image/data/stickers/guyfawkes/guyfawkes.sh.png' style="width:160px" >
     	 <% end %>

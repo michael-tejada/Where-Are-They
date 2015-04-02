@@ -8,7 +8,7 @@
           <% @movie_post_url = "https://s1.yimg.com/os/mit/media/m/entity/images/movie_placeholder-e0ca244.png" %>
         <% end %>
         <div class="movie_poster"><%= image_tag @movie_post_url%></div>
-        <div class="movie_title"><%= movie['title'] %></div>
+        <div class="movie_title" style="word-wrap: normal;"><h4><%= movie['title'] %></h4></div>
         <div class="movie_date"><%= movie['release_date'][0..3] %></div>
       </div>
     <% end %>
