@@ -14,13 +14,13 @@
       <% end %>
       </div>
 
-      <div id="giphy" class="vertical-scroll col-md-4" style="height:500px; overflow:auto;">
+      <div id="giphy" class="vertical-scroll col-md-4" style="padding:0 10px;height:500px; overflow:auto;">
       <% @giphy.each do |gif| %>
         <iframe src="<%= gif %>" width="550" height="300" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
       <% end %>
       </div>
 
-      <div id="filmography" class="vertical-scroll col-md-4" style="text-align:left; height:500px; overflow:auto;">
+      <div id="filmography" class="vertical-scroll col-md-4" style="padding: 0 10px;text-align:left; height:500px; overflow:auto;">
         <% @filmography.each do |film| %>
           <%= link_to film, searches_path(search: {movie_search: film[6..-1]}), method: 'POST', remote: true %>
           <br>
