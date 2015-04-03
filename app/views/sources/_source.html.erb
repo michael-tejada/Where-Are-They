@@ -22,7 +22,8 @@
 
       <div id="filmography" class="vertical-scroll col-md-4" style="text-align: left;">
         <% @filmography.each do |film| %>
-          <%= film %><br>
+          <%= link_to film, searches_path(search: {movie_search: film[6..-1]}), method: 'POST', remote: true %>
+          <br>
         <% end %>
       </div>
     </div>
