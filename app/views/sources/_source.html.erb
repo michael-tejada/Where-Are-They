@@ -7,20 +7,20 @@
 
 <% if !@twitter_feed.empty? && !@giphy.empty? && !@filmography.empty? %>
   <div class="container" style="width: 100%;">
-    <div class="row" style="height: 400px; overflow: auto;">
-      <div id="twitter" class="vertical-scroll col-md-4">
+    <div class="row" style="height: 500px;">
+      <div id="twitter" class="vertical-scroll col-md-4" style="height:500px; overflow:scroll;">
       <% @twitter_feed.each do |tweet| %>
         <%= @client.oembed(tweet).html.html_safe %>
       <% end %>
       </div>
 
-      <div id="giphy" class="vertical-scroll col-md-4">
+      <div id="giphy" class="vertical-scroll col-md-4" style="height:500px; overflow:auto;">
       <% @giphy.each do |gif| %>
         <iframe src="<%= gif %>" width="550" height="300" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
       <% end %>
       </div>
 
-      <div id="filmography" class="vertical-scroll col-md-4" style="text-align: left;">
+      <div id="filmography" class="vertical-scroll col-md-4" style="text-align:left; height:500px; overflow:auto;">
         <% @filmography.each do |film| %>
           <%= link_to film, searches_path(search: {movie_search: film[6..-1]}), method: 'POST', remote: true %>
           <br>
