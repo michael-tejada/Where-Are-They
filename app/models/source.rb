@@ -41,7 +41,7 @@ class Source
     url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name.gsub(' ', '%20')}&api_key=dc6zaTOxFJmzC" # public API key
     json = JSON.load(open(url))
     giphy_array = json['data'].collect {|g| g['embed_url']}
-    giphy_array[0..14]
+    giphy_array[0..9]
   end
 
 end
