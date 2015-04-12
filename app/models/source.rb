@@ -43,5 +43,4 @@ class Source
     giphy_array = json['data'].collect {|g| g['embed_url']}
     giphy_array[0..9]
   end
-
 end
