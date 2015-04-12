@@ -37,11 +37,11 @@ class Source
     filmography_data.collect {|m| "#{m[0]}: #{m[1]}"}.sort
   end
 
-  def get_giphy(actor_name)
-    url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name.gsub(' ', '%20')}&api_key=dc6zaTOxFJmzC" # public API key
-    json = JSON.load(open(url))
-    giphy_array = json['data'].collect {|g| g['embed_url']}
-    giphy_array[0..9]
-  end
+  # def get_giphy(actor_name)
+  #   url = "http://api.giphy.com/v1/gifs/search?q=#{actor_name.gsub(' ', '%20')}&api_key=dc6zaTOxFJmzC" # public API key
+  #   json = JSON.load(open(url))
+  #   giphy_array = json['data'].collect {|g| g['embed_url']}
+  #   giphy_array[0..9]
+  # end
 
 end

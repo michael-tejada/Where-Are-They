@@ -8,8 +8,8 @@ class MoviesController < ApplicationController
     @cast_data = Movie.new.get_cast_data(params[:movie_id])
 
     respond_to do |f|
-    f.html
-    f.js
+      f.html
+      f.js
     end
     
   end
