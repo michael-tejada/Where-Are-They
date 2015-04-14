@@ -5,7 +5,6 @@ class SearchesController < ApplicationController
 	end
 
   def create
-    # binding.pry
     @movie_data = Search.new.get_movie_data(params[:search][:movie_search])
 
     respond_to do |f|

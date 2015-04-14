@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree ../../../vendor/assets/stylesheets/.
  *= require_tree .
  *= require_self
+
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
@@ -21,16 +21,121 @@
 /*@import "bootstrap";*/
 /* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
+  padding: 15px 0 30px 0;
+}
+
+.footer-text, .footer-text a {
+  text-align: center;
+  color: white;
+  font-size: 1em;
+}
+
+.footer-text a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar-default {
+  background-color: red;
+  padding: 1.05em;
+  height: 20px;
+  position: fixed;
+}
+
+.container {
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+.input-group {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  font-family: Helvetica Neue, sans-serif;
+}
+
+h1 {
+  padding: 50px;
+}
+
+#filmography h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.horizontal-scroll {
+  height: 400px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.movie-card, .actor-card {
+  margin: 5px;
+  display: inline-block;
+}
+
+.actor-card {
+  height: 250px;
+  width: 200px;
+  padding: 10px; 
+  text-align: center;
+  margin: auto;
+  white-space: normal;
+}
+
+.vertical-scroll {
+  width: 50%;
+  float: left;
+  overflow: auto;
+  margin: auto;
+  height: 500px;
   padding-bottom: 30px;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+#movie-section, #cast-section, #info-section {
+  width: 100%;
+  background-color: #eeeeee;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+#info-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+#movie-scroll, #actor-scroll {
+  padding-bottom: .5em;
+}
+
+#giphy {
+  width: 40%;
+  text-align: center;
+  padding: 0;
+}
+
+#filmography {
+  width: 50%;
+  font-size: 20px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+#sources {
+  display: inline-block;
+  width: 100%; 
+}
+
+.source {
+  height: 500px;
+  width:800px;
+  margin:auto;
+}
+
+.text-center {
+  text-align: center;
 }

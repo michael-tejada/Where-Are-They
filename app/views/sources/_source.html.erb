@@ -6,22 +6,19 @@
     end %>
 
 <% if !@twitter_feed.empty? && !@filmography.empty? %>
-  <div class="container" style="width: 100%;">
-    <div class="row" style="height: 500px; width:800px; margin:auto;">
-      <div id="twitter" class="vertical-scroll col-md-4" style="height:500px; overflow:auto;">
-      <% @twitter_feed.each do |tweet| %>
-        <%= @client.oembed(tweet).html.html_safe %>
+  <div class="row source">
+    <div id="twitter" class="vertical-scroll">
+    <% @twitter_feed.each do |tweet| %>
+      <%= @client.oembed(tweet).html.html_safe %>
+    <% end %>
+    </div>
+    <div id="filmography" class="vertical-scroll">
+      <% @filmography.each do |film| %>
+        <h3><%= link_to film, searches_path(search: {movie_search: film[6..-1]}), method: 'POST', remote: true %></h3>
+        <br>
       <% end %>
-      </div>
-
-      <div id="filmography" class="vertical-scroll col-md-4" style="padding: 0 10px;text-align:left; height:500px; overflow:auto;">
-        <% @filmography.each do |film| %>
-          <%= link_to film, searches_path(search: {movie_search: film[6..-1]}), method: 'POST', remote: true %>
-          <br>
-        <% end %>
-      </div>
     </div>
   </div>
 <% else %>
-  <div class="text-center" style='text-align: center;'><h1>THIS PERSON IS A MYSTERY.</h1></div>
+  <div class="text-center"><h1>THIS PERSON IS A MYSTERY.</h1></div>
 <% end %>

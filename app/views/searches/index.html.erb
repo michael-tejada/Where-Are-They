@@ -1,8 +1,7 @@
-<div class="container">
+<div id="search">
   <h1>Where Are They (Literally) Right Now?</h1>
   <h4>Ever wondered what the actors from your favorite movies are up to now? Find out!</h4>
   <br>
-
   <%= form_for(@search, remote: true) do |f| %>
     <div class='input-group'>  
       <%= f.text_field :movie_search, id: 'movie_search', placeholder: 'Enter a movie title!', class: "form-control" %>
@@ -12,11 +11,18 @@
     </div>
   <% end %>
   <br><br>
-  <div id="movie-scroll"></div>
-  <div id='movie' class='horizontal-scroll'></div>
-  <div id="actor-scroll"></div>
 </div>
 
-<div id="cast" class='horizontal-scroll'></div>
+<div id="movie-section">
+  <div id="movie-scroll"></div>
+  <div id='movie' class='horizontal-scroll'></div>
+</div>
 
-<div id="sources" style="display: inline-block; width: 100%;" class="text-center"></div>
+<div id="cast-section">
+  <div id="actor-scroll"></div>
+  <div id="cast" class='horizontal-scroll'></div>
+</div>
+
+<div id="info-section">
+  <div id="sources" class="text-center"></div>
+</div>
