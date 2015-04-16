@@ -104,10 +104,13 @@ h1 {
 
 #movie-section, #cast-section, #info-section {
   width: 100%;
-  background-color: #eeeeee;
   margin: 0;
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+#movie-section, #info-section {
+  background-color: #eeeeee;
 }
 
 #info-section {
@@ -145,4 +148,11 @@ h1 {
 
 .text-center {
   text-align: center;
+}
+
+#logo img {
+  height: 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
 }

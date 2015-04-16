@@ -1,4 +1,5 @@
-$('#movie_search').val('')
+$('#movie-section').removeClass('hidden');
+$('#movie_search').val('');
 $('#movie-scroll').html('<h6>&#8592;SCROLL TO SELECT A MOVIE&#8594;</h6>');
 $('#movie').html('<%= j render partial: 'movie', locals: {movie_data: @movie_data} %>');
 $('#actor-scroll').html('');

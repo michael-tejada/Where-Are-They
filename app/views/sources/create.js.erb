@@ -1,1 +1,2 @@
-$('#sources').html('<%= j render partial: 'source', locals: { twitter_feed: @twitter_feed, filmography: @filmography } %>')
+$('#info-section').removeClass('hidden');
+$('#sources').html('<%= j render partial: 'source', locals: { twitter_feed: @twitter_feed, filmography: @filmography } %>');
